@@ -43,6 +43,16 @@ module.exports = {
             use: [
                 'file-loader'
             ]
+        }, {
+            test: /\.(js|jsx)$/,
+            use: [
+                'react-hot'
+
+            ],
+            include: [
+                'src'
+            ]
+
         }]
     },
 
