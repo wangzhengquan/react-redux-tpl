@@ -1,3 +1,7 @@
+/**
+ * React 生命周期
+ */
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 class Greeting extends React.Component {

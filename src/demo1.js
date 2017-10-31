@@ -1,3 +1,6 @@
+/**
+ * Simple demo
+ */
 import React from 'react'
 
 export default class Greeting extends React.Component {
@@ -7,7 +10,3 @@ export default class Greeting extends React.Component {
   }
   
 }
-
-
-
-/** https://reactjs.org/docs/react-component.html */
