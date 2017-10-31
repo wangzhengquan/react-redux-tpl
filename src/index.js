@@ -1,12 +1,8 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
-class Greeting extends React.Component {
-  render() {
-    return <h1>Hello, {this.props.name}</h1>;
-  }
-}
+import React from 'react'
+import App from './demo2'
 
 ReactDOM.render(
-  <Greeting /> ,
+  <App/> ,
   document.getElementById('root')
 )
