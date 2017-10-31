@@ -28,7 +28,7 @@
         }
       }
 
-      it.only('increment 0 === 1', function(){
+      it('increment 0 === 1', function(){
         expect(counter(0, {type: 'INCREMENT'}) ).to.be.equal(1)
       })
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env BABEL_ENV=commonjs NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js",
+    "test": "cross-env BABEL_ENV=commonjs NODE_ENV=test mocha --compilers js:babel-register --recursive",
     "dev": "./node_modules/.bin/webpack --env=dev",
     "dist": "./node_modules/.bin/webpack --env=dist",
     "start": "./node_modules/.bin/webpack-dev-server --open --env=dev",

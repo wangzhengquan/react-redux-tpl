@@ -1,10 +1,11 @@
-import todos from './todos'
+import todos from '../../src/reducers/todos'
+import { expect } from 'chai'
 
 describe('todos reducer', () => {
   it('should handle initial state', () => {
     expect(
       todos(undefined, {})
-    ).toEqual([])
+    ).eql([])
   })
 
   it('should handle ADD_TODO', () => {
@@ -14,7 +15,7 @@ describe('todos reducer', () => {
         text: 'Run the tests',
         id: 0
       })
-    ).toEqual([
+    ).eql([
       {
         text: 'Run the tests',
         completed: false,
@@ -34,7 +35,7 @@ describe('todos reducer', () => {
         text: 'Use Redux',
         id: 1
       })
-    ).toEqual([
+    ).eql([
       {
         text: 'Run the tests',
         completed: false,
@@ -62,7 +63,7 @@ describe('todos reducer', () => {
         text: 'Fix the tests',
         id: 2
       })
-    ).toEqual([
+    ).eql([
       {
         text: 'Run the tests',
         completed: false,
@@ -95,7 +96,7 @@ describe('todos reducer', () => {
         type: 'TOGGLE_TODO',
         id: 1
       })
-    ).toEqual([
+    ).eql([
       {
         text: 'Run the tests',
         completed: true,
