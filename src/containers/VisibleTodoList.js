@@ -54,7 +54,7 @@ class VisibleTodoList extends React.Component {
     return (
       <TodoList 
         todos = {getVisibleTodos(state.todos, state.visibilityFilter)}
-        onTodoClick = {toggleTodo}
+        onTodoClick = {(id)=>store.dispatch(toggleTodo(id))}
          
       >
       {props.children}
