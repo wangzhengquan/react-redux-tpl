@@ -8,6 +8,7 @@ module.exports = {
   devServer: {
       contentBase: defaultConfig.distDir,
       hot: true,
+      historyApiFallback: true,
       // compress: true,
       host: "0.0.0.0",
       port: 8080
