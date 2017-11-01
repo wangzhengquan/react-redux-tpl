@@ -25,9 +25,6 @@ Provider.childContextTypes = {
   store: PropTypes.object
 }
  
-
- 
-
 render(
   <Provider store={store}>
     <App />
