@@ -1,11 +1,32 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
 import App from './components/App'
-import reducer from './reducers'
+import store from './store'
+import PropTypes from 'prop-types';
 
-const store = createStore(reducer)
+
+
+ 
+
+class Provider extends React.Component {
+
+  getChildContext() {
+    return {
+      store: this.props.store
+    }
+  }
+
+  render() {
+    return this.props.children
+  }
+}
+
+Provider.childContextTypes = {
+  store: PropTypes.object
+}
+ 
+
+ 
 
 render(
   <Provider store={store}>

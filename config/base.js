@@ -43,10 +43,17 @@ module.exports = {
 
             ],
             include: [
-                defaultConfig.srcDir
+                defaultConfig.srcDir,
+                '/Users/wzq/workspace/web/redux/react-redux/src'
             ]
 
         }]
+    },
+
+    resolve: {
+        alias: {
+            'react-redux' : '/Users/wzq/workspace/web/redux/react-redux/src'
+        }
     },
 
     plugins: [
