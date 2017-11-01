@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const webpack = require('webpack');
+
 const defaultConfig = require('./default')
 
 module.exports = {
@@ -58,6 +60,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Output Management',
             template: path.join(defaultConfig.srcDir, 'index.html')
+        }),
+
+        new webpack.optimize.CommonsChunkPlugin({
+           name: 'common' // Specify the common bundle's name.
         }),
 
         /**
