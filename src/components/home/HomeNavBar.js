@@ -14,6 +14,6 @@ class HomeNavBar extends Navbar{
 }
 
 HomeNavBar.defaultProps = {
-  title: 'ReactUI'
+  title: 'HOME'
 }
 module.exports = HomeNavBar

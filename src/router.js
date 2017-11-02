@@ -6,8 +6,12 @@ const rootRoute = {
   path: '/',
   component: require('./components/View'),
   indexRoute: {
+    //懒加载处理，访问该页面时才会加载相关资源
     getComponents(nextState, cb) {
+      //显示loadding
       Modals.showIndicator()
+
+      //webpack split打包处理方式
       Promise.all([
         import('./components/home/HomeNavbar'),
         import('./components/home/HomePage')
