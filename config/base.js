@@ -58,6 +58,12 @@ module.exports = {
         }]
     },
 
+    resolve: {
+        alias: {
+            'react-ui' : 'f7-react-ui'
+        }
+    },
+
     plugins: [
         new CleanWebpackPlugin([defaultConfig.distDir]),
         /**
