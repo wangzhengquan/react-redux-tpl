@@ -20,4 +20,6 @@ const createStore = function(reducer){
 
   
 };
+
+export {createStore}
 export default createStore(reducer)
