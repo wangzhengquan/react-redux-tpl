@@ -18,17 +18,17 @@ class HomePage extends AnimationPage{
       <div className="page-content">
         <div className="content-block-title">Nav</div>
         <List>
-          <Link to="accordion" className="item-link">
+          <Link to="product" className="item-link">
             <div className="item-content">
               <div className="item-inner">
-                <div className="item-title">Accordion</div>
+                <div className="item-title">product</div>
               </div>
             </div>
           </Link>
-          <Link to="autocomplete" className="item-link">
+          <Link to="order" className="item-link">
             <div className="item-content">
               <div className="item-inner">
-                <div className="item-title">Autocomplete</div>
+                <div className="item-title">Order</div>
               </div>
             </div>
           </Link>

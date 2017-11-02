@@ -52,7 +52,8 @@ module.exports = {
 
             ],
             include: [
-                defaultConfig.srcDir
+                defaultConfig.srcDir,
+                '/Users/wzq/workspace/web/react/react-router/modules'
             ]
 
         }]
@@ -61,6 +62,7 @@ module.exports = {
     resolve: {
         alias: {
             'react-ui' : 'f7-react-ui'
+            // 'react-router' : '/Users/wzq/workspace/web/react/react-router/modules'
         }
     },
 

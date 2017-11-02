@@ -11,8 +11,7 @@ const rootRoute = {
       Promise.all([
         import('./components/home/HomeNavbar'),
         import('./components/home/HomePage')
-      ]).then( (navbar, page) => {
-        
+      ]).then( ([navbar, page]) => {
         cb(null, {
           navbar: hideNavbar ? null : navbar,
           page: page
@@ -31,7 +30,7 @@ const rootRoute = {
       Promise.all([
         import('./components/product/ProductNavbar'),
         import('./components/product/ProductPage')
-      ]).then( (navbar, page)  => {
+      ]).then( ([navbar, page])  => {
           cb(null, {
             navbar: hideNavbar ? null : navbar,
             page: page
@@ -47,7 +46,7 @@ const rootRoute = {
       Promise.all([
         import('./components/order/OrderNavbar'),
         import('./components/order/OrderPage')
-      ]).then( (navbar, page)  => {
+      ]).then( ([navbar, page])  => {
           cb(null, {
             navbar: hideNavbar ? null : navbar,
             page: page
