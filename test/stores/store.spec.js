@@ -1,5 +1,3 @@
-
-
 import {createStore} from '../../src/store'
 import { expect } from 'chai'
 
@@ -19,15 +17,13 @@ describe('store', () => {
 
   	const store = createStore(counter);
 
-		const render = () => {
+		store.subscribe(() => {
 		  	// console.log(store.getState())
 		  	expect(
 		      store.getState()
 		    ).eql(1)
-		}
-		store.subscribe(render)
+		})
+
 		store.dispatch({type: 'INCREMENT'})
-		 
-     
   })
 })
