@@ -1,16 +1,20 @@
-# Build a react project step by step
-工程源码 https://github.com/wangzhengquan/react-redux-tpl的 simple-project分支
+工程源码 `git clone -b simple-project https://github.com/wangzhengquan/react-redux-tpl`  
+
+搭建一个react工程
+* 实现手机的页面切换的过度效果
+* 实现代码分片的懒加载
 
 工程搭建步骤如下
 
-1 首先下载一个脚手架git clone -b scaff https://github.com/wangzhengquan/react-redux-tpl。因为这个工程是从旧有的项目中抽取出来的，还是基于react15 和 react-router2，所以修改package.json,如下：
+1 **下载一个脚手架**   
+`git clone -b scaff https://github.com/wangzhengquan/react-redux-tpl`,因为这个工程是从旧有的项目中抽取出来的，还是基于react15 和 react-router2，所以修改package.json,如下：
 
 ```js
 "react": "^15.0.0", 
 "react-dom": "^15.0.0",  
 "react-router": "^2.8.1",  
 ```
-2 新建路由文件 src/router.js
+2  **新建路由文件 src/router.js**   
 该文件时负责配置页面路由访问的
 
 ```js
@@ -83,7 +87,7 @@ const rootRoute = {
 export default rootRoute;
 ```
 
-3 新建根组件文件 src/components/View.js
+3  **新建根组件文件 src/components/View.js**
 
 ```
 import React from 'react'
@@ -146,7 +150,7 @@ componentDidLeave()
 
 ```
 
-4 新建src/components/Page.js。  
+**4 新建src/components/Page.js。**  
   在上面ReactTransitionGroup提供的几个hooks（钩子）函数的里面做动画处理，所有的page都继承该组件
   
   ```
@@ -429,7 +433,7 @@ export default class Page extends React.Component{
 }
 Page.anim = true
   ```
-5 新建src/components/Navbar.js。  
+**5 新建src/components/Navbar.js。**  
 同上面的page一样的功能，做Navbar的动画处理，所有的Navbar都继承该Navbar
 
 ```
@@ -702,7 +706,7 @@ Navbar.sizeNavbars = Navbars.sizeNavbars;
 Navbar.anim = true
 ```
 
-6 新建 src/history.js
+**6 新建 src/history.js**
 
 ```
 /* eslint no-console: 0 */
@@ -756,7 +760,7 @@ if(!browserHistory.unlisten){
 
 export default browserHistory
 ```
-7 新建router里配置的页面和导航条   
+**7 新建router里配置的页面和导航条**   
   src/home/HomeNavbar.js 
   src/home/HomePage.js 
   src/components/order/OrderNavbar.js
@@ -765,5 +769,5 @@ export default browserHistory
   src/components/product/ProductPage.js  
   具体代码参考git仓库源码
   
-  8 npm start测试 
-  
+  **8 测试**   
+  `npm start`
