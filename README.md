@@ -5,18 +5,11 @@
 
 1. why redux   
  
-1.1 问题
 
-+ react组件之间的通信可以通过父子组件之间的props传递，没有父子组件关系的的兄弟组件可以间接的通过父组件传递。那么既不是父子关系也不是兄弟关系的组件如何通信？
-![react communication](./readme/react-communication.png?v=1) 
-   					
-
-
-+ 页面切换时数据丢失，需要重新拉取，怎么办？
+react组件之间的通信可以通过父子组件之间的props传递，没有父子组件关系的的兄弟组件可以间接的通过父组件传递。那么既不是父子关系也不是兄弟关系的组件如何通信？
+![react communication](./readme/react-communication.png?v=1)   					
+页面切换时数据丢失，需要重新拉取，怎么办？
     
-
-
-1.2 解决  
 redux是通过中间的store实现组件的数据存储和访问,每个react组件都可以访问sotre这样就解决了react组件之间的通信问题和数据维护问题。
 ![redux-communication](./readme/redux-communication.png)
 
