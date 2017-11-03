@@ -23,15 +23,13 @@ redux是通过中间的store实现组件的数据存储和访问,每个react组�
 但是另一个问题来，react在执行setState更新数据时都会更新页面。那么更新store的数据如何通知页面做更新？
  
 2\. redux工作流程
-
-  
    
    * 组件在在commponentDidDount的时候，通过store的subscribe方法注册事件
-   * 组件要想更新store的数据必须dispatch一个action,通知store执行reducer更新数据，store执行所有注册的事件通知组件更新页面
+   * 组件要想更新store的数据必须dispatch一个action,通知store执行reducer更新数据，store执行所有注册的监听函数通知组件更新页面
 
-![redux-flow](./readme/redux-flow.png?v=1)
+![redux-flow](./readme/redux-flow.png?v=2)
    
-3\. redux中的几个概念（action、 reducer、 store）
+3\. 认识redux中的几个概念（action、 reducer、 store）
    
  + 3.1 action : action是dispatch派发时传递的plain object对象,因为action里的属性值经常时动态的，经常把它包在一个函数里返回，用做reducer执行的参数
   
