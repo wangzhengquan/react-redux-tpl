@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
 
-const defaultConfig = require('./default')
+const defaultConfig = require('./webpack.default')
 
 module.exports = {
     entry: {
@@ -75,9 +75,9 @@ module.exports = {
             template: path.join(defaultConfig.srcDir, 'index.html')
         }),
 
-        new webpack.optimize.CommonsChunkPlugin({
-           name: 'common' // Specify the common bundle's name.
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //    name: 'common' // Specify the common bundle's name.
+        // }),
 
         /**
          * generate manifest.json
