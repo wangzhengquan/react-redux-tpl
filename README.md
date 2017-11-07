@@ -303,8 +303,9 @@ describe('store', () => {
 })
 ```
 
-4\. npm start 运行项目
-	![todomvc示意图](./readme/todomvc.png)
+4\. npm start 运行项目.  
+
+![todomvc示意图](./readme/todomvc.png)
 	
 	
 	
