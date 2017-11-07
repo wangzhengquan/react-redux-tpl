@@ -3,17 +3,24 @@
 
 源码地址: git clone -b redux-simulation https://github.com/wangzhengquan/react-redux-tpl
 
+为更好理解redux,这个项目时里用到的store provider combineReducers 是模拟redux实现的。
+
 1. why redux   
  
 
 react组件之间的通信可以通过父子组件之间的props传递，没有父子组件关系的的兄弟组件可以间接的通过父组件传递。那么既不是父子关系也不是兄弟关系的组件如何通信？
-![react communication](./readme/react-communication.png?v=1)   					
+ 					
 页面切换时数据丢失，需要重新拉取，怎么办？
+![react communication](./readme/react-communication.png?v=1)  
+   <center>（图1）</center>
     
 redux是通过中间的store实现组件的数据存储和访问,每个react组件都可以访问sotre这样就解决了react组件之间的通信问题和数据维护问题。
-![redux-communication](./readme/redux-communication.png)
+
 
 但是另一个问题来，react在执行setState更新数据时都会更新页面。那么更新store的数据如何通知页面做更新？
+
+![redux-communication](./readme/redux-communication.png)
+<center>（图2）</center>
  
 2\. redux工作流程
    
@@ -21,6 +28,7 @@ redux是通过中间的store实现组件的数据存储和访问,每个react组�
    * 组件要想更新store的数据必须dispatch一个action,通知store执行reducer更新数据，store执行所有注册的监听函数通知组件更新页面
 
 ![redux-flow](./readme/redux-flow.png?v=2)
+<center>（图3）</center>
    
 3\. 认识redux中的几个概念（action、 reducer、 store）
    
@@ -297,7 +305,9 @@ describe('store', () => {
 
 4\. npm start 运行项目
 	![todomvc示意图](./readme/todomvc.png)
-	为更好理解redux这个项目时里用到的store provider combineReducers 是模拟redux实现的。
+	
+	
+	
 
 
 
