@@ -8,12 +8,16 @@ const defaultConfig = require('./webpack.default')
 
 module.exports = {
     entry: {
-        app: path.join(defaultConfig.srcDir, 'index.js')
+        app: path.join(defaultConfig.srcDir, 'index.js'),
+        vendor: [
+          'lodash'
+        ]
 
     },
 
     output: {
-        filename: '[name].js',
+        // filename: '[name].js',
+        filename: '[name].[chunkhash].js',
         path: defaultConfig.distDir,
         publicPath: '/'
     },
@@ -74,10 +78,13 @@ module.exports = {
             title: 'Output Management',
             template: path.join(defaultConfig.srcDir, 'index.html')
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+           name: 'vendor'
+        }),
 
-        // new webpack.optimize.CommonsChunkPlugin({
-        //    name: 'common' // Specify the common bundle's name.
-        // }),
+        new webpack.optimize.CommonsChunkPlugin({
+           name: 'runtime' // Specify the common bundle's name.
+        }),
 
         /**
          * generate manifest.json
