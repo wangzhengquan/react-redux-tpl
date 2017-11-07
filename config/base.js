@@ -61,6 +61,7 @@ module.exports = {
 
     resolve: {
         alias: {
+            // https://github.com/wangzhengquan/f7-react-ui
             'react-ui' : 'f7-react-ui'
             // 'react-router' : '/Users/wzq/workspace/web/react/react-router/modules'
         }
