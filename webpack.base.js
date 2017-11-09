@@ -4,16 +4,20 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
 
-const defaultConfig = require('./default')
+const defaultConfig = require('./webpack.default')
 
 module.exports = {
     entry: {
-        app: path.join(defaultConfig.srcDir, 'index.js')
+        app: path.join(defaultConfig.srcDir, 'index.js'),
+        // vendor: [
+        //   'lodash'
+        // ]
 
     },
 
     output: {
-        filename: '[name].js',
+        // filename: '[name].js',
+        filename: '[name].[hash].js',
         path: defaultConfig.distDir,
         publicPath: '/'
     },
@@ -26,6 +30,13 @@ module.exports = {
             use: [
                 'style-loader',
                 'css-loader'
+            ]
+        },{
+            test: /\.less$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                'less-loader'
             ]
         }, {
             test: /\.(png|svg|jpg|gif)$/,
@@ -51,6 +62,12 @@ module.exports = {
         }]
     },
 
+    resolve: {
+        alias: {
+            'react-ui' : 'f7-react-ui'
+        }
+    },
+
     plugins: [
         new CleanWebpackPlugin([defaultConfig.distDir]),
         /**
@@ -61,14 +78,17 @@ module.exports = {
             title: 'Output Management',
             template: path.join(defaultConfig.srcDir, 'index.html')
         }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //    name: 'vendor'
+        // }),
 
         new webpack.optimize.CommonsChunkPlugin({
-           name: 'common' // Specify the common bundle's name.
+           name: 'runtime' // Specify the common bundle's name.
         }),
 
         /**
          * generate manifest.json
          */
         new ManifestPlugin()
-    ],
+    ]
 };
