@@ -18,17 +18,26 @@ class HomePage extends AnimationPage{
       <div className="page-content">
         <div className="content-block-title">Nav</div>
         <List>
-          <Link to="product" className="item-link">
+          <Link to="actList" className="item-link">
             <div className="item-content">
               <div className="item-inner">
-                <div className="item-title">product</div>
+                <div className="item-title">活动列表</div>
               </div>
             </div>
           </Link>
-          <Link to="order" className="item-link">
+
+          <Link to="activity" className="item-link">
             <div className="item-content">
               <div className="item-inner">
-                <div className="item-title">Order</div>
+                <div className="item-title">活动详情</div>
+              </div>
+            </div>
+          </Link>
+
+          <Link to="org" className="item-link">
+            <div className="item-content">
+              <div className="item-inner">
+                <div className="item-title">社团详情</div>
               </div>
             </div>
           </Link>

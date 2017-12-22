@@ -21,25 +21,57 @@ const rootRoute = {
           page: page
 
         })
-        document.querySelector('title').innerHTML='Home'
+        document.querySelector('title').innerHTML='一起嗨'
         Modals.hideIndicator()
       })
     }
   },
 
   childRoutes: [{
-    path: 'product',
+    path: 'actList',
     getComponents(nextState, cb) {
       Modals.showIndicator()
       Promise.all([
-        import('./components/product/ProductNavbar'),
-        import('./components/product/ProductPage')
+        import('./components/actList/ActListNavbar'),
+        import('./components/actList/ActListPage')
       ]).then( ([navbar, page])  => {
           cb(null, {
             navbar: hideNavbar ? null : navbar,
             page: page
           })
-          document.querySelector('title').innerHTML='Product'
+          // document.querySelector('title').innerHTML='Product'
+          Modals.hideIndicator()
+      })
+    }
+  }, {
+    path: 'activity',
+    getComponents(nextState, cb) {
+      Modals.showIndicator()
+      Promise.all([
+        import('./components/activity/ActivityNavbar'),
+        import('./components/activity/ActivityPage')
+      ]).then( ([navbar, page])  => {
+          cb(null, {
+            navbar: hideNavbar ? null : navbar,
+            page: page
+          })
+          // document.querySelector('title').innerHTML='Product'
+          Modals.hideIndicator()
+      })
+    }
+  },{
+    path: 'org',
+    getComponents(nextState, cb) {
+      Modals.showIndicator()
+      Promise.all([
+        import('./components/org/OrgNavbar'),
+        import('./components/org/OrgPage')
+      ]).then( ([navbar, page])  => {
+          cb(null, {
+            navbar: hideNavbar ? null : navbar,
+            page: page
+          })
+          // document.querySelector('title').innerHTML='Product'
           Modals.hideIndicator()
       })
     }
@@ -55,7 +87,7 @@ const rootRoute = {
             navbar: hideNavbar ? null : navbar,
             page: page
           })
-          document.querySelector('title').innerHTML='Product'
+          // document.querySelector('title').innerHTML='Product'
           Modals.hideIndicator()
       })
     }

@@ -5,9 +5,9 @@ import classNames from 'classnames';
 import {List} from 'react-ui/lists'
 require('react-ui/resources/less/content-block.less')
 require('react-ui/resources/less/forms.less')
-require('styles/order.less');
+require('styles/actList.less');
 
-class OrderPage extends AnimationPage{
+class ActListPage extends AnimationPage{
   constructor(props) {
     super(props);
   }
@@ -17,12 +17,16 @@ class OrderPage extends AnimationPage{
     return (
     <div className={classNames('page', this.props.className)} data-page={this.props.pageName}>
       <div className="page-content">
-        <div className="content-block-title">Order</div>
+        <div className="content-block-title">Product</div>
+         
+
       </div>
     </div>
     );
   }
- 
+
+   
+  
 }
 
-module.exports = OrderPage
+module.exports = ActListPage

@@ -4,16 +4,19 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const webpack = require('webpack');
 
-const defaultConfig = require('./default')
+const defaultConfig = require('./webpack.default')
 
 module.exports = {
     entry: {
         app: path.join(defaultConfig.srcDir, 'index.js')
+         
 
     },
 
     output: {
-        filename: '[name].js',
+        // filename: '[name].js',
+        // filename: '[name].[chunkhash].js',
+        filename: '[name].[hash].js',
         path: defaultConfig.distDir,
         publicPath: '/'
     },
@@ -52,8 +55,7 @@ module.exports = {
 
             ],
             include: [
-                defaultConfig.srcDir,
-                '/Users/wzq/workspace/web/react/react-router/modules'
+                defaultConfig.srcDir
             ]
 
         }]
@@ -61,9 +63,9 @@ module.exports = {
 
     resolve: {
         alias: {
-            // https://github.com/wangzhengquan/f7-react-ui
-            'react-ui' : 'f7-react-ui'
-            // 'react-router' : '/Users/wzq/workspace/web/react/react-router/modules'
+            'react-ui' : 'f7-react-ui',
+            styles: `${defaultConfig.srcDir}/styles/`,
+            images: `${defaultConfig.srcDir}/images/`
         }
     },
 
@@ -74,12 +76,13 @@ module.exports = {
          * @type {String}
          */
         new HtmlWebpackPlugin({
-            title: 'Output Management',
+            title: '一起嗨',
             template: path.join(defaultConfig.srcDir, 'index.html')
         }),
+         
 
         new webpack.optimize.CommonsChunkPlugin({
-           name: 'common' // Specify the common bundle's name.
+           name: 'runtime' // Specify the common bundle's name.
         }),
 
         /**

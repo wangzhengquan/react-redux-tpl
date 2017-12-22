@@ -1,12 +1,11 @@
 import React  from 'react';
-import {Link} from 'react-router'
 import AnimationPage from '../Page'
 import classNames from 'classnames';
-import {List} from 'react-ui/lists'
-require('react-ui/resources/less/content-block.less')
-require('react-ui/resources/less/forms.less')
+require('react-ui/resources/less/content-block.less');
+require('react-ui/resources/less/forms.less');
+require('styles/activity.less');
 
-class OrderPage extends AnimationPage{
+class ActPage extends AnimationPage{
   constructor(props) {
     super(props);
   }
@@ -28,4 +27,4 @@ class OrderPage extends AnimationPage{
   
 }
 
-module.exports = OrderPage
+module.exports = ActPage

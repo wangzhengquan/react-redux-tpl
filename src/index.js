@@ -1,7 +1,5 @@
  
 import React from 'react';
-import PropTypes from 'prop-types'
-React.PropTypes = PropTypes
 import ReactDOM from 'react-dom';
 import { Router} from 'react-router'
 import history from './history'

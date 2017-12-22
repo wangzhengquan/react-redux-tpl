@@ -1,6 +1,6 @@
 import Navbar from '../Navbar'
 
-class OrderNavBar extends Navbar{
+class OrgNavbar extends Navbar{
   
 
     constructor(props) {
@@ -13,7 +13,7 @@ class OrderNavBar extends Navbar{
     }
 }
 
-OrderNavBar.defaultProps = {
+OrgNavbar.defaultProps = {
   title: 'Product'
 }
-module.exports = OrderNavBar
+module.exports = OrgNavbar
