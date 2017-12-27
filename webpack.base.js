@@ -55,7 +55,8 @@ module.exports = {
 
             ],
             include: [
-                defaultConfig.srcDir
+                defaultConfig.srcDir,
+                '/Users/wangzhengquan/workspace/web/react-ui/src'
             ]
 
         }]
@@ -63,6 +64,7 @@ module.exports = {
 
     resolve: {
         alias: {
+            'react-ui': '/Users/wangzhengquan/workspace/web/react-ui/src',
             'react-ui' : 'f7-react-ui',
             styles: `${defaultConfig.srcDir}/styles/`,
             images: `${defaultConfig.srcDir}/images/`
