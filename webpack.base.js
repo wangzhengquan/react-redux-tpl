@@ -19,6 +19,8 @@ module.exports = {
         filename: '[name].[hash].js',
         path: defaultConfig.distDir,
         publicPath: '/'
+      //静态文件展现时用下面的路径
+        //publicPath: './'
     },
 
     
